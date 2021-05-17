@@ -1,9 +1,8 @@
 package br.eti.arnaud.bdmwallet.ui.statement
 
-import android.widget.TextView
 import androidx.fragment.app.viewModels
-import br.eti.arnaud.bdmwallet.databinding.FragmentStatementBinding
 import br.eti.arnaud.bdmwallet.base.BindingFragment
+import br.eti.arnaud.bdmwallet.databinding.FragmentStatementBinding
 
 class StatementFragment : BindingFragment<FragmentStatementBinding>() {
 
