@@ -38,7 +38,7 @@ class MainViewModel: BaseViewModel() {
         return viewModelScope.launch(Dispatchers.IO) {
             exchange.create(ExchangeService::class.java).let {
                 while (isActive){
-                    it?.exchangeValues()?.let { response ->
+                    it.exchangeValues()?.let { response ->
                         db.exchangeValuesDao().insert(
                             ExchangeValues(
                                 uid = 0,

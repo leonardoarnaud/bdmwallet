@@ -1,14 +1,15 @@
 package br.eti.arnaud.bdmwallet
 
-import android.widget.Toast
+import android.view.Menu
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import br.eti.arnaud.bdmwallet.app.toRealCurrency
 import br.eti.arnaud.bdmwallet.base.BindingActivity
 import br.eti.arnaud.bdmwallet.databinding.ActivityMainBinding
-import kotlinx.coroutines.Job
+
 
 class MainActivity: BindingActivity<ActivityMainBinding>() {
 
@@ -16,12 +17,18 @@ class MainActivity: BindingActivity<ActivityMainBinding>() {
 
     override fun onReady() {
         vm = ViewModelProvider(this).get(MainViewModel::class.java)
+        setSupportActionBar(b.toolbar)
 
         vm.exchangeValues.observe {
-            Toast.makeText(this, "${it?.buy} -  ${it?.sell}", Toast.LENGTH_LONG).show()
+            b.toolbarTitle.text = ("1 BDM = ${it.buy?.toRealCurrency()}")
         }
 
         setupNavigationBar()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_toolbar, menu)
+        return true
     }
 
     private fun setupNavigationBar() {
