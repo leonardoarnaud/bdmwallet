@@ -27,6 +27,7 @@ android {
 
             buildConfigField("String", 'API_URL', '"https://api.bdmdigital.com.br/"')
             buildConfigField("String", 'EXCHANGE_URL', '"https://cambio.bdmdigital.com.br/"')
+            buildConfigField("Long", 'EXCHANGE_PULLING_DELAY', '9999L')
         }
         release {
             versionNameSuffix "-release"
@@ -35,6 +36,7 @@ android {
 
             buildConfigField("String", 'API_URL', '"https://api.bdmdigital.com.br/"')
             buildConfigField("String", 'EXCHANGE_URL', '"https://cambio.bdmdigital.com.br/"')
+            buildConfigField("Long", 'EXCHANGE_PULLING_DELAY', '9999L')
         }
     }
     compileOptions {

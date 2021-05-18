@@ -10,7 +10,7 @@ import org.greenrobot.eventbus.EventBus
 
 abstract class BaseViewModel: ViewModel() {
 
-    val db get() = App.instance?.db
+    val db get() = App.instance?.db!!
 
     var loadingStack: Int = 0
 

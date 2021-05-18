@@ -7,7 +7,7 @@ import br.eti.arnaud.bdmwallet.app.local.model.ExchangeValues
 
 @Database(
     entities = [ExchangeValues::class],
-    version = 3
+    version = 5
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun exchangeValuesDao(): ExchangeValuesDao

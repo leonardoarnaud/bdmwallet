@@ -19,10 +19,8 @@ class ReceiveViewModel : BaseViewModel() {
         simulateProessing()
     }
 
-    fun simulateProessing(){
-        viewModelScope.launch(
-            context = Dispatchers.IO
-        ) {
+    private fun simulateProessing(){
+        viewModelScope.launch(Dispatchers.IO) {
             loading {
                 throwErrorMessage(R.string.app_name)
                 Thread.sleep(3000)

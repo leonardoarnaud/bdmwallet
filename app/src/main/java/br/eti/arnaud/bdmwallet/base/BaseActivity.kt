@@ -15,9 +15,9 @@ import org.greenrobot.eventbus.ThreadMode
 abstract class BaseActivity: AppCompatActivity() {
 
     fun <T> LiveData<T>.observe(data: (result: T) -> Unit){
-        this.observe(this@BaseActivity){
+        this.observe(this@BaseActivity){ it?.let {
             data(it)
-        }
+        }}
     }
 
     override fun onStart() {

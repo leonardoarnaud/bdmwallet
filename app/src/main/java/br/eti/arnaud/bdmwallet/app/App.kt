@@ -17,24 +17,18 @@ class App: Application() {
     override fun onCreate() {
         super.onCreate()
 
-        instantiateRepositories()
-
+        instantiateDb()
     }
 
-    private fun instantiateRepositories() {
+    private fun instantiateDb() {
         db = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java, "bdmwallet"
-        ).build()
-
-
+        ).fallbackToDestructiveMigration().build()
     }
-
-
 
     init { instance = this }
     companion object {
         var instance: App? = null
-        const val EXCHANGE_PULLING_DELAY = 9999L
     }
 }

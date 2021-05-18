@@ -1,5 +1,6 @@
 package br.eti.arnaud.bdmwallet
 
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,6 +16,11 @@ class MainActivity: BindingActivity<ActivityMainBinding>() {
 
     override fun onReady() {
         vm = ViewModelProvider(this).get(MainViewModel::class.java)
+
+        vm.exchangeValues.observe {
+            Toast.makeText(this, "${it?.buy} -  ${it?.sell}", Toast.LENGTH_LONG).show()
+        }
+
         setupNavigationBar()
     }
 

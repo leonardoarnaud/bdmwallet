@@ -7,9 +7,6 @@ import retrofit2.http.Path
 
 interface ExchangeService {
     @GET("cambiobdm.php")
-    suspend fun exchangeValues(): Call<ExchangeValuesResponse?>?
+    suspend fun exchangeValues(): ExchangeValuesResponse?
 
-    companion object{
-
-    }
 }
