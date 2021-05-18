@@ -1,15 +1,20 @@
 package br.eti.arnaud.bdmwallet
 
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import br.eti.arnaud.bdmwallet.base.BindingActivity
 import br.eti.arnaud.bdmwallet.databinding.ActivityMainBinding
+import kotlinx.coroutines.Job
 
 class MainActivity: BindingActivity<ActivityMainBinding>() {
 
+    lateinit var vm: MainViewModel
+
     override fun onReady() {
+        vm = ViewModelProvider(this).get(MainViewModel::class.java)
         setupNavigationBar()
     }
 
