@@ -1,6 +1,8 @@
 package br.eti.arnaud.bdmwallet
 
 import androidx.lifecycle.viewModelScope
+import br.eti.arnaud.bdmwallet.app.CatchableErrorCode
+import br.eti.arnaud.bdmwallet.app.CatchableErrorEvent
 import br.eti.arnaud.bdmwallet.app.local.model.ExchangeValues
 import br.eti.arnaud.bdmwallet.app.remote.ExchangeService
 import br.eti.arnaud.bdmwallet.base.BaseViewModel
@@ -26,6 +28,10 @@ class MainViewModel: BaseViewModel() {
 
     init {
         exchangeListeningJob = startExchangeListening()
+        viewModelScope.launch(Dispatchers.IO) {
+            delay(1000)
+            throwCatchableError(CatchableErrorEvent(CatchableErrorCode.ADDRESS_NOT_DEFINED))
+        }
     }
 
     override fun onCleared() {
@@ -48,8 +54,13 @@ class MainViewModel: BaseViewModel() {
                         )
                     }
                     delay(BuildConfig.EXCHANGE_PULLING_DELAY)
+
                 }
             }
         }
+    }
+
+    fun setAddress(address: CharSequence) {
+
     }
 }

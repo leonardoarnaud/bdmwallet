@@ -1,12 +1,11 @@
 package br.eti.arnaud.bdmwallet.base
 
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import br.eti.arnaud.bdmwallet.R
-import br.eti.arnaud.bdmwallet.app.ErrorMessageEvent
-import br.eti.arnaud.bdmwallet.app.LoadingStartEvent
-import br.eti.arnaud.bdmwallet.app.LoadingStopEvent
+import br.eti.arnaud.bdmwallet.app.*
 import com.google.android.material.snackbar.Snackbar
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -38,6 +37,12 @@ abstract class BaseActivity: AppCompatActivity() {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
+    open fun onMessageEvent(event: CatchableErrorEvent) {
+        Log.e("ERROR", "Ocorreu um erro, código: $event" )
+        onError(event.code)
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
     open fun onMessageEvent(event: LoadingStartEvent?) {
         findViewById<View>(R.id.progress_bar)?.visibility = View.VISIBLE
     }
@@ -46,5 +51,7 @@ abstract class BaseActivity: AppCompatActivity() {
     open fun onMessageEvent(event: LoadingStopEvent?) {
         findViewById<View>(R.id.progress_bar)?.visibility = View.GONE
     }
+
+    open fun onError(code: CatchableErrorCode){}
 
 }

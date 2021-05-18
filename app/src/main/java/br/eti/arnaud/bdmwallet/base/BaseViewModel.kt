@@ -2,10 +2,9 @@ package br.eti.arnaud.bdmwallet.base
 
 import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
-import br.eti.arnaud.bdmwallet.app.App
-import br.eti.arnaud.bdmwallet.app.ErrorMessageEvent
-import br.eti.arnaud.bdmwallet.app.LoadingStartEvent
-import br.eti.arnaud.bdmwallet.app.LoadingStopEvent
+import br.eti.arnaud.bdmwallet.app.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import org.greenrobot.eventbus.EventBus
 
 abstract class BaseViewModel: ViewModel() {
@@ -37,6 +36,10 @@ abstract class BaseViewModel: ViewModel() {
 
     fun throwErrorMessage(@StringRes msgResId: Int){
         EventBus.getDefault().post(ErrorMessageEvent(msgResId))
+    }
+
+    fun throwCatchableError(errorEvent: CatchableErrorEvent){
+        EventBus.getDefault().post(errorEvent)
     }
 
 }
