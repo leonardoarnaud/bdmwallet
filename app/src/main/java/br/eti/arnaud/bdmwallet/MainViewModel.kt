@@ -24,8 +24,6 @@ class MainViewModel: BaseViewModel() {
 
     private var exchangeListeningJob: Job
 
-    val exchangeValues get() = db.exchangeValuesDao().select()
-
     init {
         exchangeListeningJob = startExchangeListening()
         viewModelScope.launch(Dispatchers.IO) {

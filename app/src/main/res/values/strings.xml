@@ -5,4 +5,7 @@
     <string name="title_receive">Receber</string>
     <string name="address_dialog_title_main_activity">Cole aqui seu endereço BDM</string>
     <string name="paste">Colar</string>
+    <string name="real_currency">R$</string>
+    <string name="bdm_exchangel_label">Cotação</string>
+
 </resources>

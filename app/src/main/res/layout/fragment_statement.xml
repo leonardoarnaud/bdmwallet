@@ -1,19 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.statement.StatementFragment">
 
-    <TextView
-        android:id="@+id/text_statement"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resume_account_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center_horizontal"
-        android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="@dimen/size_30">
+
+        <TextView
+            android:id="@+id/bdm_currency_label_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bdm_amount_label_text_view"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/size_4"
+            app:layout_constraintBottom_toTopOf="@+id/bdm_amount_textview"
+            app:layout_constraintEnd_toEndOf="@+id/bdm_amount_textview"
+            app:layout_constraintStart_toStartOf="@+id/bdm_amount_textview" />
+
+        <TextView
+            android:id="@+id/bdm_amount_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_text_color"
+            android:textSize="@dimen/size_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="0,00" />
+
+        <TextView
+            android:id="@+id/equivalent_real_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/size_4"
+            app:layout_constraintEnd_toEndOf="@+id/bdm_amount_textview"
+            app:layout_constraintStart_toStartOf="@+id/bdm_amount_textview"
+            app:layout_constraintTop_toBottomOf="@+id/bdm_amount_textview"
+            tools:text="R$ 735.000,00" />
+
+        <TextView
+            android:id="@+id/bdm_exchange_label_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bdm_exchangel_label"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/size_4"
+            app:layout_constraintBottom_toTopOf="@+id/bdm_exchange_value_textview"
+            app:layout_constraintEnd_toEndOf="@+id/bdm_exchange_value_textview"
+            app:layout_constraintStart_toStartOf="@+id/bdm_exchange_value_textview" />
+
+        <TextView
+            android:id="@+id/bdm_exchange_value_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_text_color"
+            android:textSize="@dimen/size_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="R$ 7,35" />
+
+        <TextView
+            android:id="@+id/equivalent_bdm_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/one_bdm_exchange_label"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/size_4"
+            app:layout_constraintEnd_toEndOf="@+id/bdm_exchange_value_textview"
+            app:layout_constraintStart_toStartOf="@+id/bdm_exchange_value_textview"
+            app:layout_constraintTop_toBottomOf="@+id/bdm_amount_textview" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/statement_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
+

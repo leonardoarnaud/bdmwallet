@@ -23,11 +23,6 @@ class MainActivity: BindingActivity<ActivityMainBinding>() {
     override fun onReady() {
         vm = ViewModelProvider(this).get(MainViewModel::class.java)
         setSupportActionBar(b.toolbar)
-
-        vm.exchangeValues.observe {
-            b.toolbarTitle.text = ("1 BDM = ${it.buy?.toRealCurrency()}")
-        }
-
         setupNavigationBar()
     }
 

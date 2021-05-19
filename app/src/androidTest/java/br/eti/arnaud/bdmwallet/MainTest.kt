@@ -5,6 +5,7 @@ import androidx.test.core.app.launchActivity
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import br.eti.arnaud.bdmwallet.tools.BaseTest
+import br.eti.arnaud.bdmwallet.ui.statement.StatementViewModel
 import getOrAwaitValue
 import kotlinx.coroutines.delay
 
@@ -17,12 +18,12 @@ import org.junit.Before
 @RunWith(AndroidJUnit4::class)
 class MainTest: BaseTest() {
 
-    lateinit var vm: MainViewModel
+    lateinit var vm: StatementViewModel
 
     @Before
     fun init() {
         testActivityRule.scenario.onActivity {
-            vm = ViewModelProvider(it).get(MainViewModel::class.java)
+            vm = ViewModelProvider(it).get(StatementViewModel::class.java)
         }
     }
 
