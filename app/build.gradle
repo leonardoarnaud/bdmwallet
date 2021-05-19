@@ -82,6 +82,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     androidTestImplementation 'androidx.test:core-ktx:1.3.0'
     testImplementation "androidx.room:room-testing:2.3.0"
+    androidTestImplementation 'androidx.test:rules:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
 
     // Thirdparty
     implementation 'org.greenrobot:eventbus:3.2.0'
