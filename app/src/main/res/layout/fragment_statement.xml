@@ -20,12 +20,12 @@
             android:text="@string/bdm_amount_label_text_view"
             android:textColor="@color/secondary_text_color"
             android:textSize="@dimen/size_4"
-            app:layout_constraintBottom_toTopOf="@+id/bdm_amount_textview"
-            app:layout_constraintEnd_toEndOf="@+id/bdm_amount_textview"
-            app:layout_constraintStart_toStartOf="@+id/bdm_amount_textview" />
+            app:layout_constraintBottom_toTopOf="@+id/bdm_balance_textview"
+            app:layout_constraintEnd_toEndOf="@+id/bdm_balance_textview"
+            app:layout_constraintStart_toStartOf="@+id/bdm_balance_textview" />
 
         <TextView
-            android:id="@+id/bdm_amount_textview"
+            android:id="@+id/bdm_balance_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/main_text_color"
@@ -37,15 +37,15 @@
             android:text="0,00" />
 
         <TextView
-            android:id="@+id/equivalent_real_text_view"
+            android:id="@+id/one_bdm_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/one_bdm_exchange_label"
             android:textColor="@color/secondary_text_color"
             android:textSize="@dimen/size_4"
-            app:layout_constraintEnd_toEndOf="@+id/bdm_amount_textview"
-            app:layout_constraintStart_toStartOf="@+id/bdm_amount_textview"
-            app:layout_constraintTop_toBottomOf="@+id/bdm_amount_textview"
-            tools:text="R$ 735.000,00" />
+            app:layout_constraintEnd_toEndOf="@+id/bdm_exchange_value_textview"
+            app:layout_constraintStart_toStartOf="@+id/bdm_exchange_value_textview"
+            app:layout_constraintTop_toBottomOf="@+id/bdm_exchange_value_textview" />
 
         <TextView
             android:id="@+id/bdm_exchange_label_textview"
@@ -71,15 +71,15 @@
             tools:text="R$ 7,35" />
 
         <TextView
-            android:id="@+id/equivalent_bdm_text_view"
+            android:id="@+id/bdm_to_real_exchange_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/one_bdm_exchange_label"
+            tools:text="R$ 735.000,00"
             android:textColor="@color/secondary_text_color"
             android:textSize="@dimen/size_4"
-            app:layout_constraintEnd_toEndOf="@+id/bdm_exchange_value_textview"
-            app:layout_constraintStart_toStartOf="@+id/bdm_exchange_value_textview"
-            app:layout_constraintTop_toBottomOf="@+id/bdm_amount_textview" />
+            app:layout_constraintEnd_toEndOf="@+id/bdm_balance_textview"
+            app:layout_constraintStart_toStartOf="@+id/bdm_balance_textview"
+            app:layout_constraintTop_toBottomOf="@+id/bdm_balance_textview" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"

@@ -1,10 +1,9 @@
 package br.eti.arnaud.bdmwallet.base
 
-import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
-import br.eti.arnaud.bdmwallet.app.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
+import br.eti.arnaud.bdmwallet.app.App
+import br.eti.arnaud.bdmwallet.app.LoadingStartEvent
+import br.eti.arnaud.bdmwallet.app.LoadingStopEvent
 import org.greenrobot.eventbus.EventBus
 
 abstract class BaseViewModel: ViewModel() {
@@ -19,7 +18,7 @@ abstract class BaseViewModel: ViewModel() {
         loading(false)
     }
 
-    private fun loading(b: Boolean){
+    fun loading(b: Boolean){
         if (b){
             loadingStack++
         } else {
@@ -33,14 +32,5 @@ abstract class BaseViewModel: ViewModel() {
             EventBus.getDefault().post(LoadingStopEvent())
         }
     }
-
-    fun throwErrorMessage(@StringRes msgResId: Int){
-        EventBus.getDefault().post(ErrorMessageEvent(msgResId))
-    }
-
-    fun throwCatchableError(errorEvent: CatchableErrorEvent){
-        EventBus.getDefault().post(errorEvent)
-    }
-
 }
 

@@ -1,5 +1,6 @@
 package br.eti.arnaud.bdmwallet
 
+import br.eti.arnaud.bdmwallet.ui.main.vm.MainViewModel
 import org.junit.Test
 
 import org.junit.Assert.*

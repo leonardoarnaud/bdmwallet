@@ -6,8 +6,8 @@ import androidx.lifecycle.LiveData
 abstract class BaseFragment: Fragment() {
 
     fun <T> LiveData<T>.observe(data: (result: T) -> Unit){
-        this.observe(viewLifecycleOwner){
+        this.observe(viewLifecycleOwner){ it?.let {
             data(it)
-        }
+        }}
     }
 }

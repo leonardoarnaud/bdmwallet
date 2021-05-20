@@ -38,7 +38,7 @@ abstract class BaseActivity: AppCompatActivity() {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     open fun onMessageEvent(event: CatchableErrorEvent) {
-        Log.e("ERROR", "Ocorreu um erro, código: $event" )
+        Log.e("ERROR", "Ocorreu um erro, código: ${event.code}" )
         onError(event.code)
     }
 

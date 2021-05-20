@@ -6,9 +6,11 @@ import androidx.room.RoomDatabase
 import br.eti.arnaud.bdmwallet.BuildConfig
 import br.eti.arnaud.bdmwallet.app.local.AppDatabase
 import br.eti.arnaud.bdmwallet.app.local.model.ExchangeValues
+import br.eti.arnaud.bdmwallet.app.remote.ApiService
 import br.eti.arnaud.bdmwallet.app.remote.ExchangeService
 import kotlinx.coroutines.*
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class App: Application() {
 
@@ -29,6 +31,7 @@ class App: Application() {
 
     init { instance = this }
     companion object {
+
         var instance: App? = null
     }
 }

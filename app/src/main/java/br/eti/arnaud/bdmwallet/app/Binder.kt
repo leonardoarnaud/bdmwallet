@@ -3,7 +3,7 @@ package br.eti.arnaud.bdmwallet.app
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import br.eti.arnaud.bdmwallet.base.BindingActivity
-import br.eti.arnaud.bdmwallet.MainActivity
+import br.eti.arnaud.bdmwallet.ui.main.MainActivity
 import br.eti.arnaud.bdmwallet.databinding.ActivityMainBinding
 import br.eti.arnaud.bdmwallet.databinding.FragmentSendBinding
 import br.eti.arnaud.bdmwallet.databinding.FragmentStatementBinding

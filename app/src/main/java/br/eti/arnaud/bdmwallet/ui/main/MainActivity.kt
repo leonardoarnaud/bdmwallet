@@ -1,4 +1,4 @@
-package br.eti.arnaud.bdmwallet
+package br.eti.arnaud.bdmwallet.ui.main
 
 import android.content.ClipboardManager
 import android.content.Context
@@ -8,10 +8,11 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import br.eti.arnaud.bdmwallet.R
 import br.eti.arnaud.bdmwallet.app.CatchableErrorCode
-import br.eti.arnaud.bdmwallet.app.toRealCurrency
 import br.eti.arnaud.bdmwallet.base.BindingActivity
 import br.eti.arnaud.bdmwallet.databinding.ActivityMainBinding
+import br.eti.arnaud.bdmwallet.ui.main.vm.MainViewModel
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.input.getInputField
 import com.afollestad.materialdialogs.input.input

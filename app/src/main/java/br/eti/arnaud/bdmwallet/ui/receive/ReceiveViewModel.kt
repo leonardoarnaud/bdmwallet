@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.eti.arnaud.bdmwallet.R
+import br.eti.arnaud.bdmwallet.app.throwErrorMessage
 import br.eti.arnaud.bdmwallet.base.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,10 +17,10 @@ class ReceiveViewModel : BaseViewModel() {
     val text: LiveData<String> = _text
 
     init {
-        simulateProessing()
+        simulateProcessing()
     }
 
-    private fun simulateProessing(){
+    private fun simulateProcessing(){
         viewModelScope.launch(Dispatchers.IO) {
             loading {
                 throwErrorMessage(R.string.app_name)

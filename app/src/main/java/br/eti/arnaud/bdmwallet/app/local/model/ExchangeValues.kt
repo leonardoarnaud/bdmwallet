@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class ExchangeValues(
     @PrimaryKey val uid: Int,
-    @ColumnInfo(name = "buy") val buy: Double?,
-    @ColumnInfo(name = "sell") val sell: Double?,
+    @ColumnInfo(name = "buy") val buy: Double,
+    @ColumnInfo(name = "sell") val sell: Double,
 )
