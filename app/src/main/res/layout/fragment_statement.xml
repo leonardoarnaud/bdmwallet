@@ -18,8 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bdm_amount_label_text_view"
-            android:textColor="@color/secondary_text_color"
-            android:textSize="@dimen/size_4"
+            style="@style/AppSecondaryText"
             app:layout_constraintBottom_toTopOf="@+id/bdm_balance_textview"
             app:layout_constraintEnd_toEndOf="@+id/bdm_balance_textview"
             app:layout_constraintStart_toStartOf="@+id/bdm_balance_textview" />
@@ -41,8 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/one_bdm_exchange_label"
-            android:textColor="@color/secondary_text_color"
-            android:textSize="@dimen/size_4"
+            style="@style/AppSecondaryText"
             app:layout_constraintEnd_toEndOf="@+id/bdm_exchange_value_textview"
             app:layout_constraintStart_toStartOf="@+id/bdm_exchange_value_textview"
             app:layout_constraintTop_toBottomOf="@+id/bdm_exchange_value_textview" />
@@ -52,8 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bdm_exchangel_label"
-            android:textColor="@color/secondary_text_color"
-            android:textSize="@dimen/size_4"
+            style="@style/AppSecondaryText"
             app:layout_constraintBottom_toTopOf="@+id/bdm_exchange_value_textview"
             app:layout_constraintEnd_toEndOf="@+id/bdm_exchange_value_textview"
             app:layout_constraintStart_toStartOf="@+id/bdm_exchange_value_textview" />
@@ -75,8 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="R$ 735.000,00"
-            android:textColor="@color/secondary_text_color"
-            android:textSize="@dimen/size_4"
+            style="@style/AppSecondaryText"
             app:layout_constraintEnd_toEndOf="@+id/bdm_balance_textview"
             app:layout_constraintStart_toStartOf="@+id/bdm_balance_textview"
             app:layout_constraintTop_toBottomOf="@+id/bdm_balance_textview" />

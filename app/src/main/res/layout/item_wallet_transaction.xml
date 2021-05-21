@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_19">
+
+    <ImageView
+        android:id="@+id/direction_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_5"
+        android:layout_marginLeft="@dimen/size_5"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:tint="@color/inflow_color"
+        tools:src="@drawable/ic_baseline_arrow_circle_down_24" />
+
+    <TextView
+        android:id="@+id/amount_textview"
+        style="@style/ItemWalletTransactionAmountTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_5"
+        android:layout_marginLeft="@dimen/size_5"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintStart_toEndOf="@+id/direction_imageview"
+        tools:text="150 BDM" />
+
+    <TextView
+        android:id="@+id/date_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="21/05/2021"
+        style="@style/AppSecondaryText"/>
+
+    <TextView
+        android:id="@+id/time_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_textview"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:text="17:19:03"
+        style="@style/AppSecondaryText"/>
+
+    <TextView
+        android:id="@+id/address_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_5"
+        android:layout_marginLeft="@dimen/size_5"
+        android:ellipsize="end"
+        android:lines="1"
+        style="@style/AppSecondaryText"
+        app:layout_constraintEnd_toStartOf="@+id/date_textview"
+        app:layout_constraintStart_toEndOf="@+id/direction_imageview"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:text="3FgStowr1tn5eFpa3UcKotoGSfDtEcfEA1w" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
