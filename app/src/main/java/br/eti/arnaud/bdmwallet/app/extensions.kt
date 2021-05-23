@@ -1,10 +1,13 @@
 package br.eti.arnaud.bdmwallet.app
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
+import androidx.viewbinding.ViewBinding
 import org.greenrobot.eventbus.EventBus
 import java.math.RoundingMode
 import java.text.DecimalFormat
@@ -30,6 +33,10 @@ fun ImageView.tint(@ColorRes inflowColor: Int) {
         DrawableCompat.wrap(drawable),
         ContextCompat.getColor(context, inflowColor)
     )
+}
+
+fun ViewBinding.inflate(lf: LayoutInflater, vg: ViewGroup, attachParent: Boolean){
+
 }
 
 fun throwErrorMessage(@StringRes msgResId: Int){

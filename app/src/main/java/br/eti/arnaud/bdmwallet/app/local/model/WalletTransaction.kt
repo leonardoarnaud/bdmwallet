@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 class WalletTransaction (
-    @PrimaryKey(autoGenerate = true) val uid: Long = 0,
+    @ColumnInfo(name = "id") @PrimaryKey val id: String,
     @ColumnInfo(name = "amount") val amount: Long,
     @ColumnInfo(name = "direction") val direction: Boolean,
     @ColumnInfo(name = "timestamp") val timestamp: Long,

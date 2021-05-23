@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.eti.arnaud.bdmwallet.app.Binder
 
 abstract class BindingFragment<ViewBinding>: BaseFragment() {
+
+    var vg: ViewGroup? = null
+    lateinit var li: LayoutInflater
+
+    abstract fun onBind(): ViewBinding
 
     private var _b: ViewBinding? = null
     val b: ViewBinding get() = _b!!
@@ -16,7 +20,9 @@ abstract class BindingFragment<ViewBinding>: BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _b = Binder.bind(this, inflater, container)
+        this.li = inflater
+        this.vg = container
+        _b = onBind()
         return (b as androidx.viewbinding.ViewBinding).root
     }
 
@@ -31,4 +37,5 @@ abstract class BindingFragment<ViewBinding>: BaseFragment() {
     }
 
     abstract fun onReady()
+
 }

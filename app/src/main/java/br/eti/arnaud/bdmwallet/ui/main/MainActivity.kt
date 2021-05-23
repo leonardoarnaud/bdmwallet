@@ -21,6 +21,8 @@ class MainActivity: BindingActivity<ActivityMainBinding>() {
 
     lateinit var vm: MainViewModel
 
+    override fun onBind() = ActivityMainBinding.inflate(layoutInflater)
+
     override fun onReady() {
         vm = ViewModelProvider(this).get(MainViewModel::class.java)
         setSupportActionBar(b.toolbar)
@@ -42,7 +44,7 @@ class MainActivity: BindingActivity<ActivityMainBinding>() {
         MaterialDialog(this).show {
             title(R.string.address_dialog_title_main_activity)
             input { _, address ->
-                vm.setAddress(address)
+                vm.saveAddress(address)
                 dismiss()
             }
             negativeButton(R.string.paste) {

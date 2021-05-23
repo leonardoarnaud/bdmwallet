@@ -12,5 +12,5 @@ interface WalletTransactionDao {
     fun select(): LiveData<List<WalletTransaction>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(exchangeValues: ExchangeValues)
+    fun insert(exchangeValues: List<WalletTransaction>)
 }

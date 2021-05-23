@@ -8,7 +8,6 @@ import br.eti.arnaud.bdmwallet.ui.statement.StatementViewModel
 import getOrAwaitValue
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 import org.junit.Test
@@ -45,7 +44,7 @@ class MainTest: BaseTest() {
     @Test
     fun ao_definir_endereco_saldo_deve_ser_atualizado() {
         val oldValue = statementViewModel.wallet.getOrAwaitValue()
-        mainViewModel.setAddress("3FgStowr1tn5eFpa3UcKotoGSfDtEcfEA1w")
+        mainViewModel.saveAddress("3FgStowr1tn5eFpa3UcKotoGSfDtEcfEA1w")
         Thread.sleep(5000)
         assertNotSame(oldValue, statementViewModel.wallet.getOrAwaitValue())
     }

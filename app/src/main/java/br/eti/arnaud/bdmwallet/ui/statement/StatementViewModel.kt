@@ -45,4 +45,6 @@ class StatementViewModel: BaseViewModel() {
     private fun convertBdmToReal(bdm: Long, realExchange: Double): Double{
         return (bdm / 100).toDouble() * realExchange
     }
+
+
 }

@@ -15,7 +15,7 @@ import br.eti.arnaud.bdmwallet.app.local.model.WalletTransaction
         Wallet::class,
         WalletTransaction::class
     ],
-    version = 9
+    version = 11
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun exchangeValuesDao(): ExchangeValuesDao
